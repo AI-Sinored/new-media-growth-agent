@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Growth Agent MVP</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <main class="layout">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">AI Agent Workflow</p>
+          <h1>内容增长 Agent MVP</h1>
+          <p class="subtitle">输入账号定位、目标用户和关键词，一键生成选题、评分、脚本、标题、封面文案、发布计划和复盘建议。</p>
+        </div>
+        <div class="hero-card">
+          <strong>Agent 流程</strong>
+          <span>热点监测 → 竞品拆解 → 选题评分 → 脚本生成 → 排期 → 复盘学习</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <form id="agent-form" class="panel form-panel">
+          <h2>生成内容方案</h2>
+
+          <label>
+            品牌/账号名称
+            <input name="brand_name" required value="城市家电卖场" />
+          </label>
+
+          <label>
+            品牌定位
+            <input name="brand_positioning" value="本地一站式家电采购顾问" />
+          </label>
+
+          <label>
+            目标用户
+            <textarea name="audience" required>准备装修、换家电、追求性价比的家庭用户</textarea>
+          </label>
+
+          <div class="row">
+            <label>
+              平台
+              <select name="platform">
+                <option>抖音</option>
+                <option>小红书</option>
+                <option>B站</option>
+                <option>视频号</option>
+                <option>快手</option>
+                <option>通用</option>
+              </select>
+            </label>
+            <label>
+              数量
+              <input name="content_count" type="number" min="1" max="20" value="5" />
+            </label>
+          </div>
+
+          <label>
+            目标
+            <input name="goal" value="提升同城客户咨询量" />
+          </label>
+
+          <label>
+            语气
+            <input name="tone" value="真实、直接、有记忆点" />
+          </label>
+
+          <label>
+            关键词，逗号分隔
+            <input name="keywords" value="空调,冰箱,洗衣机,装修避坑" />
+          </label>
+
+          <label>
+            竞品/客户观察，逗号分隔
+            <textarea name="competitor_notes">同城账号常用门店探访和价格对比, 用户最关心售后、安装和真实价格</textarea>
+          </label>
+
+          <label>
+            RSS 源，可选，逗号分隔
+            <input name="rss_feeds" placeholder="https://example.com/rss" />
+          </label>
+
+          <label class="checkbox">
+            <input name="use_llm" type="checkbox" checked />
+            尝试使用 OpenAI 增强生成；无 Key 时自动规则兜底
+          </label>
+
+          <button id="submit-btn" type="submit">运行 Agent</button>
+        </form>
+
+        <section class="panel result-panel">
+          <div class="result-header">
+            <div>
+              <h2>生成结果</h2>
+              <p id="status">等待输入后运行。</p>
+            </div>
+            <div id="export-wrap"></div>
+          </div>
+          <div id="summary" class="summary"></div>
+          <div id="ideas" class="ideas"></div>
+        </section>
+      </section>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
