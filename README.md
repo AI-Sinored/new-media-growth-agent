@@ -20,7 +20,7 @@
 ### 1. 克隆或解压项目
 
 ```bash
-cd content-growth-agent-mvp
+cd new-media-growth-agent
 ```
 
 ### 2. 创建虚拟环境
