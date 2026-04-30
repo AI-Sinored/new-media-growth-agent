@@ -1,4 +1,4 @@
-# Content Growth Agent MVP
+# New Media Growth Agent MVP｜新媒体内容增长 Agent MVP
 
 一个可直接上传 GitHub 的「内容增长 Agent」最小可运行版本。它把热点发现、竞品拆解、选题评分、脚本生成、发布计划和复盘沉淀串成一条自动化内容工作流。
 
